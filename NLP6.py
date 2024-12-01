@@ -1,27 +1,29 @@
 import spacy
 from spacy import displacy
 
+# Load the small English language model
 nlp = spacy.load("en_core_web_sm")
 
-multiline_text = """
+# Multiline input text
+text = """
 Earth is the third planet from the Sun in our solar system and the only known celestial body to support life. 
 With a diverse range of ecosystems, it is home to a vast array of plant and animal species, including humans. 
 Earth's atmosphere, composed mainly of nitrogen and oxygen, sustains life by providing the necessary conditions for biological processes to thrive.
 """
 
-multiline_doc = nlp(multiline_text)
+# Process the text
+doc = nlp(text)
 
-for token in multiline_doc:
-    print(
-        f"""
-TOKEN: {token.text}
-=====
-{token.tag_ = }
-{token.head.text = }
-{token.dep_ = }"""
-    )
+# Print token information
+for token in doc:
+    print(f"TOKEN: {token.text}")
+    print(f"  Part of Speech Tag: {token.tag_}")
+    print(f"  Head Word: {token.head.text}")
+    print(f"  Dependency Relation: {token.dep_}")
+    print()
 
-displacy.serve(multiline_doc, style="dep")
+# Visualize dependency parse
+displacy.serve(doc, style="dep")
 
 
 '''
