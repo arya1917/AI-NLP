@@ -19,17 +19,17 @@ for item in unigrams:
 n = 2
 sentence = 'Earth is the third planet from the Sun in our solar system and the only known celestial body to support life. With a diverse range of ecosystems, it is home to a vast array of plant and animal species, including humans.'
 
-unigrams = ngrams(sentence.split(), n)
+bigrams = ngrams(sentence.split(), n)
 print(f"\n***********   BIGRAM    ************************")
-for item in unigrams:
+for item in bigrams:
     print(item)
 
 #trigram model
 n = 3
 sentence = 'Earth is the third planet from the Sun in our solar system and the only known celestial body to support life. With a diverse range of ecosystems, it is home to a vast array of plant and animal species, including humans.'
-unigrams = ngrams(sentence.split(), n)
+trigrams = ngrams(sentence.split(), n)
 print(f"\n***********   TRIGRAM    ************************")
-for item in unigrams:
+for item in trigrams:
     print(item)
 
 
